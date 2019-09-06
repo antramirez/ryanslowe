@@ -3,7 +3,7 @@
 // adding css and js
 function ryanslowe_setup() {
   wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Raleway&display=swap');
-  wp_enqueue_style('style', get_template_directory_uri() . '/public/css/style.css', NULL, microtime(), all);
+  wp_enqueue_style('style', get_template_directory_uri() . '/public/css/style.css', NULL, microtime());
   wp_enqueue_script('main', get_theme_file_uri('/public/js/script.js'), NULL, microtime(), true); // boolean for whether you want it in the footer
 
 
