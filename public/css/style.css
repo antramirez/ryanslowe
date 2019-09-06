@@ -1,18 +1,26 @@
 body {
-  background-image: linear-gradient(to left, #d7d5d5, aliceblue);
+  background-image: linear-gradient(to left, #d7d5d5, #bee0ff);
   font-family: Raleway, sans-serif;
   width: 100%;
   height: 100%;
   margin: 0px; }
 
 h1 {
-  font-size: 5em; }
+  font-size: 4em;
+  margin: 0em; }
 
 h2 {
-  font-size: 48px; }
+  font-size: 40px; }
 
 h3 {
   font-size: 32px; }
+
+p {
+  font-size: 1em;
+  line-height: 1.3em; }
+
+.no-margin {
+  margin: 0px !important; }
 
 .white-text {
   color: white; }
@@ -22,18 +30,36 @@ h3 {
 
 /* NAV MENU */
 .menu-nav-menu-container {
-  padding: 20px;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 100; }
+  z-index: 100;
+  display: flex;
+  justify-content: space-between; }
+  .menu-nav-menu-container > a {
+    text-decoration: none; }
+  .menu-nav-menu-container #logo {
+    color: gray;
+    text-align: center;
+    padding-left: 20px;
+    opacity: 0;
+    height: 50px;
+    font-size: .6em; }
+    .menu-nav-menu-container #logo > h1 {
+      margin: 0px;
+      font-size: 3em; }
+  .menu-nav-menu-container .opaque {
+    opacity: 1 !important; }
   .menu-nav-menu-container ul {
     list-style-type: none;
-    text-align: right; }
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 4px; }
     .menu-nav-menu-container ul li {
       display: inline-block;
       position: relative;
-      margin: 10px 20px;
-      font-size: 18px;
+      margin: 4px 20px;
+      font-size: 16px;
       z-index: 100; }
       .menu-nav-menu-container ul li a {
         text-decoration: none;
@@ -86,11 +112,22 @@ h3 {
       transform: translateY(0px); }
 
 .scrolled {
-  background-image: linear-gradient(to left, #d7d5d5, aliceblue);
-  transition: background-color 200ms linear;
-  border-bottom: 2px solid white; }
+  background-color: black;
+  transition: background-color 200ms linear; }
+
+/* ENTRY HEADER */
+.entry-header {
+  max-width: 1080px;
+  padding-left: 40px;
+  padding-top: 10px; }
+  .entry-header h1 {
+    font-size: 3em; }
 
 /* PAGE */
+.entry-content {
+  max-width: 800px;
+  margin: auto; }
+
 /* HOMEPAGE */
 .homepage-container {
   margin: 0;
@@ -109,35 +146,51 @@ h3 {
   */ }
   .homepage-container h2 {
     text-align: center; }
+  .homepage-container #homepage-main #homepage-placeholder-container {
+    position: absolute;
+    top: 0;
+    bottom: 0%;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: hidden; }
   .homepage-container #homepage-main #homepage-main-image-container {
     position: relative;
-    top: -113px;
+    top: -70px;
     z-index: 1;
     vertical-align: baseline; }
     .homepage-container #homepage-main #homepage-main-image-container #banner-image {
-      height: calc(100vh - 73px);
+      height: calc(100vh - 70px);
       background-position: center !important;
       background-repeat: no-repeat !important;
       background-size: cover !important;
       padding: 40px;
       overflow: hidden; }
-    .homepage-container #homepage-main #homepage-main-image-container #banner-text {
-      padding: 40px;
-      position: relative;
-      text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      margin-bottom: 35%; }
-      .homepage-container #homepage-main #homepage-main-image-container #banner-text h1 {
-        margin-bottom: 10px; }
-      .homepage-container #homepage-main #homepage-main-image-container #banner-text span {
-        color: rgba(255, 255, 255, 0); }
+      .homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text {
+        padding: 40px;
+        position: relative;
+        margin: auto;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        margin-bottom: 35%;
+        opacity: 0; }
+        .homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text h1 {
+          margin-bottom: 10px; }
+        .homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text span {
+          font-size: 1.2em;
+          opacity: 0; }
     .homepage-container #homepage-main #homepage-main-image-container .scroll-down-icon {
-      position: relative;
-      bottom: 0;
+      position: absolute;
       margin: auto;
-      text-align: center; }
+      text-align: center;
+      opacity: 0;
+      left: 50%;
+      transform: translateX(-50%); }
       .homepage-container #homepage-main #homepage-main-image-container .scroll-down-icon a {
         display: block;
         text-decoration: none;
@@ -202,24 +255,175 @@ h3 {
     padding: 40px;
     margin-top: 80px; }
 
+/* PORTFOLIO */
+/* Blur 
+.hover07 figure img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover07 figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+*/
+/* PERFORMANCES */
+.performance-photos-gallery li {
+  cursor: pointer; }
+  .performance-photos-gallery li figcaption {
+    font-size: 1.5em !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    bottom: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    padding: 4px 4px !important;
+    width: calc(100% - 8px) !important; }
+  .performance-photos-gallery li img {
+    opacity: 1;
+    transition: .3s opacity ease-in-out 0s; }
+  .performance-photos-gallery li:hover img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); }
+  .performance-photos-gallery li:hover figcaption {
+    opacity: 1 !important;
+    background: transparent !important; }
+
+/* HEADSHOTS */
+.blocks-gallery-item img {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  transition: .3s all ease-in-out 0s; }
+
+.blocks-gallery-item img:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); }
+
 /* RESUME */
 .pdfemb-viewer {
-  margin: auto !important; }
+  margin: auto !important;
+  border: 0px !important; }
 
 .wp-block-file {
   text-align: center; }
   .wp-block-file a {
+    font-family: Raleway, sans-serif !important;
+    font-size: 1em !important;
     display: inline-block;
-    width: 150px;
+    margin: 40px 0px 20px 0px;
+    padding: 9px 0px 2px !important;
+    width: 199px;
+    height: 27px;
     border: 1px solid black;
     border-radius: 25px;
-    margin: 5px .75em !important;
-    padding: .5em 1em !important;
-    font-size: 13px;
-    color: white;
-    background-color: #32373c;
+    background-color: white !important;
+    color: black !important;
     text-decoration: none;
-    transition: all .3s ease-in-out 0s; }
-  .wp-block-file a:hover {
-    background-color: white;
-    color: black !important; }
+    transition: all .3s ease-in-out 0s;
+    outline: none; }
+    .wp-block-file a:hover {
+      background-color: #5fadbe !important;
+      border-color: white !important;
+      color: white !important; }
+
+/* CONTACT */
+.wpforms-container {
+  padding: 10px;
+  width: 600px; }
+  .wpforms-container .wpforms-field-container {
+    height: 100%; }
+  .wpforms-container form {
+    padding: 20px; }
+    .wpforms-container form .wpforms-field {
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin: 30px 0px; }
+      .wpforms-container form .wpforms-field label {
+        font-size: .9em;
+        color: gray; }
+      .wpforms-container form .wpforms-field .wpforms-error {
+        color: red;
+        font-size: .7em; }
+      .wpforms-container form .wpforms-field input[type="text"], .wpforms-container form .wpforms-field input[type="email"] {
+        font-family: Raleway, sans-serif;
+        font-size: 1em;
+        display: block;
+        padding-left: 8px;
+        width: 400px;
+        height: 30px;
+        border: 1px solid #32373c;
+        border-radius: 10px;
+        background-color: transparent;
+        transition: all .3s ease-in-out 0s; }
+        .wpforms-container form .wpforms-field input[type="text"]:hover, .wpforms-container form .wpforms-field input[type="email"]:hover {
+          border: 1px solid white; }
+        .wpforms-container form .wpforms-field input[type="text"]:focus, .wpforms-container form .wpforms-field input[type="email"]:focus {
+          background-color: #f8fcff;
+          outline: none; }
+      .wpforms-container form .wpforms-field input:-internal-autofill-selected {
+        background-color: #32373c !important; }
+    .wpforms-container form .wpforms-field-textarea {
+      display: block;
+      height: 160px; }
+      .wpforms-container form .wpforms-field-textarea textarea {
+        font-family: Raleway, sans-serif;
+        font-size: 1em;
+        display: block;
+        padding: 8px;
+        width: 400px;
+        height: 90%;
+        background-color: transparent;
+        border: 1px solid #32373c;
+        border-radius: 10px;
+        transition: all .3s ease-in-out 0s; }
+        .wpforms-container form .wpforms-field-textarea textarea:hover {
+          border: 1px solid white; }
+        .wpforms-container form .wpforms-field-textarea textarea:focus {
+          background-color: #f8fcff;
+          outline: none; }
+    .wpforms-container form .wpforms-field-hp {
+      display: none; }
+    .wpforms-container form .wpforms-submit-container button[type="submit"] {
+      font-family: Raleway, sans-serif;
+      font-size: 1em;
+      display: block;
+      margin: 40px 0px 20px 0px;
+      width: 200px;
+      height: 40px;
+      border: 1px solid black;
+      border-radius: 25px;
+      background-color: white;
+      transition: all .3s ease-in-out 0s;
+      outline: none; }
+      .wpforms-container form .wpforms-submit-container button[type="submit"]:hover {
+        background-color: #5fadbe;
+        border-color: white;
+        color: white; }
+
+/* FOOTER */
+footer {
+  height: 100px;
+  padding: 10px 20px;
+  background-color: gray;
+  text-align: right; }
+  footer p {
+    font-size: 14px; }
+  footer ul {
+    position: relative;
+    bottom: 8px;
+    list-style-type: none; }
+    footer ul li {
+      display: inline-block; }
+    footer ul img {
+      width: 30px; }
+  footer div {
+    position: relative;
+    top: 10%; }
+    footer div #ant-rez {
+      font-size: 12px;
+      color: #a7a7a7; }
+      footer div #ant-rez a {
+        text-decoration: none;
+        color: #4f4f4f; }

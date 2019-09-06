@@ -14,13 +14,16 @@ get_header(); ?>
 				<div id="homepage-main">
 					<div id="homepage-main-image-container">
 
+					<div id="homepage-placeholder-container">
+
+					</div>
 
 						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image-1024x683.jpg'); ?>)">
-							<div id="banner-text">
+							<div class="banner-text">
 								<h1>RYAN S. LOWE</h1>
-								<span>ACTOR</span> |
-								<span>SINGER</span> |
-								<span>DANCER</span> |
+								<span>ACTOR</span>  | 
+								<span>SINGER</span>  | 
+								<span>DANCER</span>  | 
 								<span>PERFORMER</span>
 							</div>
 							<div class="scroll-down-icon">

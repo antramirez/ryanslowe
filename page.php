@@ -19,7 +19,7 @@ get_header(); ?>
 		<header class="entry-header">
 			<?php the_title('<h1>', '</h1>'); ?>
 		</header>
-		<div class="entry-content">
+		<div class="entry-content <?php if (is_page('Contact')): echo ('no-margin'); endif;?>">
 
 			<?php
 			while ( have_posts() ) :

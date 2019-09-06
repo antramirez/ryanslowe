@@ -18,6 +18,11 @@ h3 {
   font-size: 32px;
 }
 
+p {
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
 .white-text {
   color: white;
 }
@@ -32,6 +37,24 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-nav-menu-container #logo {
+  color: gray;
+  text-align: center;
+  padding-left: 20px;
+  opacity: 0;
+}
+
+.menu-nav-menu-container #logo h1 {
+  margin: 0px;
+  font-size: 3em;
+}
+
+.menu-nav-menu-container .opaque {
+  opacity: 1 !important;
 }
 
 .menu-nav-menu-container ul {
@@ -43,7 +66,7 @@ h3 {
   display: inline-block;
   position: relative;
   margin: 10px 20px;
-  font-size: 18px;
+  font-size: 20px;
   z-index: 100;
 }
 
@@ -145,13 +168,13 @@ h3 {
 
 .homepage-container #homepage-main #homepage-main-image-container {
   position: relative;
-  top: -113px;
+  top: -116px;
   z-index: 1;
   vertical-align: baseline;
 }
 
 .homepage-container #homepage-main #homepage-main-image-container #banner-image {
-  height: calc(100vh - 73px);
+  height: calc(100vh - 78px);
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
@@ -159,21 +182,26 @@ h3 {
   overflow: hidden;
 }
 
-.homepage-container #homepage-main #homepage-main-image-container #banner-text {
+.homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text {
   padding: 40px;
   position: relative;
+  margin: auto;
   text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
   top: 50%;
   transform: translateY(-50%);
   color: white;
   margin-bottom: 35%;
 }
 
-.homepage-container #homepage-main #homepage-main-image-container #banner-text h1 {
+.homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text h1 {
   margin-bottom: 10px;
 }
 
-.homepage-container #homepage-main #homepage-main-image-container #banner-text span {
+.homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text span {
   color: rgba(255, 255, 255, 0);
 }
 
@@ -293,4 +321,11 @@ h3 {
 .wp-block-file a:hover {
   background-color: white;
   color: black !important;
+}
+
+/* FOOTER */
+footer {
+  height: 400px;
+  padding: 80px;
+  background-color: gray;
 }
