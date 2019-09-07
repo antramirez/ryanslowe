@@ -18,7 +18,9 @@ get_header(); ?>
 
 					</div>
 
-						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image.jpg'); ?>)">
+						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image.jpg');//'/09/dsc03602.jpg'); ?>)">
+
+						
 							<div class="banner-text">
 								<h1>RYAN S. LOWE</h1>
 								<span>ACTOR</span>  | 

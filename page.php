@@ -19,7 +19,7 @@ get_header(); ?>
 		<header class="entry-header">
 			<?php the_title('<h1>', '</h1>'); ?>
 		</header>
-		<div class="entry-content <?php if (is_page('Contact')): echo ('no-margin'); endif;?>">
+		<div class="entry-content">
 
 			<?php
 			while ( have_posts() ) :
@@ -45,28 +45,30 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
+
 <div class="full-image-overlay-container">
 	<div class="image-close-button"></div>
 	<div class="full-image-overlay-main"> 
-		<div class="arrow-container left-arrow-container">
-			<span class="arrow left-arrow"></span>
-		</div>
+		<div class="full-image-margin"></div>
 		<div class="centered-container">
 			<h3 class="performance-title"></h3>
 			<p class="character-title"></p>
 			<div class="full-image-container">
+				<div class="arrow-container left-arrow-container">
+					<span class="arrow left-arrow"></span>
+				</div>
 				<img src="" alt="">
+				<div class="arrow-container right-arrow-container">
+					<span class="arrow right-arrow"></span>
+				</div>
 			</div>
 			<div class="performance-description">
 				
 			</div>
 		</div>
-		<div class="arrow-container right-arrow-container">
-			<span class="arrow right-arrow"></span>
-		</div>
+		<div class="full-image-margin"></div>
 	</div>
-	
+</div> 
 
-</div>
 
 <?php get_footer(); ?>

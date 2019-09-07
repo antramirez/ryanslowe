@@ -26,21 +26,32 @@
 <body <?php body_class(); ?>>
 
   <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+  <div class="hamburger-menu-container">
+    <div class="hamburger-menu-bar"></div>
+    <div class="hamburger-menu-bar"></div>
+    <div class="hamburger-menu-bar"></div>
+  </div>
   <div class="mobile-nav">
+    <div class="mobile-nav-close-button"></div>
+    <a href='https://rysclowe.staging.wpengine.com' id="mobile-nav-logo"><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>
     <ul>
-      <li><a href="">About</a></li>
-      <li><a href="">Happening</a></li>
+      <!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li> -->
+      <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
+      <li><a href="<?php echo esc_url( home_url( '/Happening' ) ); ?>">Happening</a></li>
       <li class="mobile-menu-item has-children">
-        <a href="" >Gallery</a>
-        <ul>
+        <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>">Gallery</a>
+        <!-- <ul>
           <li class="sub-menu-item"><a href="">Performances</a></li>
           <li class="sub-menu-item"><a href="">Headshots</a></li>
           <li class="sub-menu-item"><a href="">Miscellaneous</a></li>
-        </ul>
+        </ul> -->
       </li>
-      <li><a href="">Videos</a></li>
-      <li><a href="">Resume</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="<?php echo esc_url( home_url( '/videos' ) ); ?>">Videos</a></li>
+
+      <li><a href="<?php echo esc_url( home_url( '/resume' ) ); ?>">Resume</a></li>
+
+      <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+
 
 
     </ul>

@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('body').css("overflow", "hidden");
   }
 
-  $(".menu-nav-menu-container").prepend("<a href='https://ryanslowe.com/'><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>");
+  $(".menu-nav-menu-container").prepend("<a href='https://rysclowe.staging.wpengine.com'><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>");
   $(".menu-nav-menu-container .banner-text").attr('id', 'logo');
 
   toggleLogo();
@@ -14,6 +14,15 @@ $(document).ready(function(){
   $("#homepage-main-image-container .banner-text").animate({opacity: "1"}, 3000);
   $("#homepage-main-image-container .banner-text span").animate({opacity: "1"}, 4400);
   $(".scroll-down-icon").animate({opacity: 1}, 6000);
+
+
+  // mobile nav
+  $('.hamburger-menu-container').click(function() {
+    $('.mobile-nav').css('display', 'block');
+  });
+  $('.mobile-nav-close-button').click(function() {
+    $('.mobile-nav').css('display', 'none');
+  });
   
 
   $(function () {
