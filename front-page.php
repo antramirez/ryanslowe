@@ -18,7 +18,7 @@ get_header(); ?>
 
 					</div>
 
-						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image-1024x683.jpg'); ?>)">
+						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image.jpg'); ?>)">
 							<div class="banner-text">
 								<h1>RYAN S. LOWE</h1>
 								<span>ACTOR</span>  | 
@@ -31,7 +31,7 @@ get_header(); ?>
 									<span></span>
 								</a>
 								<a href="#featured-content" id="scroll-link">
-									Scroll
+									Featured
 								</a>
 							</div>
 						</div>

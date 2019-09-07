@@ -45,4 +45,28 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
+<div class="full-image-overlay-container">
+	<div class="image-close-button"></div>
+	<div class="full-image-overlay-main"> 
+		<div class="arrow-container left-arrow-container">
+			<span class="arrow left-arrow"></span>
+		</div>
+		<div class="centered-container">
+			<h3 class="performance-title"></h3>
+			<p class="character-title"></p>
+			<div class="full-image-container">
+				<img src="" alt="">
+			</div>
+			<div class="performance-description">
+				
+			</div>
+		</div>
+		<div class="arrow-container right-arrow-container">
+			<span class="arrow right-arrow"></span>
+		</div>
+	</div>
+	
+
+</div>
+
 <?php get_footer(); ?>

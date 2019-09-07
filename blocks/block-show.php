@@ -1,15 +1,13 @@
-<div class="upcoming-show-container" style="border: 2px solid black;">
-  <h3><?php block_field( 'name' ); ?></h3>
-  <?php
-  block_field( 'show' );
-  block_field( 'character' );
-  block_field( 'location' );
-  block_field( 'additional_info' );
-  block_field( 'photographer' );
+<div class="show-container">
+  
+  <p class="show-title-block"><?php block_field( 'show' ); ?></p>
 
-  the_post(); echo get_post_field('post_content');
+  <p class="character-block">as <?php block_field( 'character' ); ?></p>
 
+  <p class="location-block"><?php block_field( 'location' ); ?></p>
 
-  ?>
+  <?php block_field( 'additional-info' ); ?>
+ 
+  <p class="photographer-block">Photography by <?php block_field( 'photographer' ); ?></p>
 
 </div>
