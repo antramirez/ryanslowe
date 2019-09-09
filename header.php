@@ -33,7 +33,7 @@
   </div>
   <div class="mobile-nav">
     <div class="mobile-nav-close-button"></div>
-    <a href='https://rysclowe.staging.wpengine.com' id="mobile-nav-logo"><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>
+    <a href='https://ryanslowe.com' id="mobile-nav-logo"><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>
     <ul>
       <!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li> -->
       <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>

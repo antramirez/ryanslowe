@@ -377,6 +377,7 @@ p {
   .homepage-container #featured-content {
     position: relative;
     padding: 40px;
+    height: calc(100vh - 100px);
     margin-top: 40px; }
     .homepage-container #featured-content h3 a {
       text-decoration: none;
@@ -451,9 +452,13 @@ p {
   .full-image-overlay-container .full-image-overlay-main {
     width: 100%;
     height: 100%;
-    display: flex; }
+    display: flex;
+    overflow: scroll !important; }
     .full-image-overlay-container .full-image-overlay-main .full-image-margin {
       width: 15%; }
+      @media screen and (max-width: 800px) {
+        .full-image-overlay-container .full-image-overlay-main .full-image-margin {
+          display: none; } }
     .full-image-overlay-container .full-image-overlay-main .centered-container {
       height: 80%;
       width: 70%;
@@ -461,6 +466,11 @@ p {
       margin: 0px;
       padding: 10px;
       text-align: center; }
+      @media screen and (max-width: 800px) {
+        .full-image-overlay-container .full-image-overlay-main .centered-container {
+          width: 100%;
+          padding-left: 0px;
+          padding-right: 0px; } }
       .full-image-overlay-container .full-image-overlay-main .centered-container h3 {
         margin-top: 0px;
         margin-bottom: 0px; }
@@ -476,22 +486,37 @@ p {
         position: relative; }
         .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container img {
           display: block;
+          position: relative;
           max-width: 100%;
           max-height: 100%;
-          margin: auto; }
+          margin: auto;
+          top: 50%;
+          transform: translateY(-50%); }
         .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow-container {
           position: absolute;
           top: 0;
           bottom: 0;
-          padding: 10px; }
+          padding: 20px;
+          width: 30px; }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow-container.left-arrow-container {
             justify-content: right;
             position: absolute;
-            left: -20px; }
+            left: -40px;
+            padding-left: 10px;
+            z-index: 40000; }
+            @media screen and (max-width: 800px) {
+              .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow-container.left-arrow-container {
+                left: 20px;
+                z-index: 40000px; } }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow-container.right-arrow-container {
             justify-content: left;
             position: absolute;
-            right: -20px; }
+            right: -40px;
+            padding-right: 10px; }
+            @media screen and (max-width: 800px) {
+              .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow-container.right-arrow-container {
+                right: 20px;
+                z-index: 40000px; } }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow-container:hover {
             color: #bee0ff; }
         .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow {
@@ -502,7 +527,8 @@ p {
           height: 24px;
           border-bottom: 1px solid #fff;
           transition: .1s border-bottom ease-in-out 0s;
-          cursor: pointer; }
+          cursor: pointer;
+          z-index: 40000px; }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow:hover {
             border-bottom: 1px solid gray; }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow.left-arrow:hover {
@@ -510,17 +536,17 @@ p {
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow.right-arrow:hover {
             border-right: 1px solid gray; }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow.left-arrow {
-            right: 0px;
             border-left: 1px solid #fff;
             -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-            transition: .1s border-bottom ease-in-out 0s; }
+            transition: .1s border-bottom ease-in-out 0s;
+            z-index: 40000px; }
           .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container .arrow.right-arrow {
             left: 0px;
             border-right: 1px solid #fff;
             -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-            transition: .3s border-bottom ease-in-out 0s; }
+            transition: .1s border-bottom ease-in-out 0s; }
       .full-image-overlay-container .full-image-overlay-main .centered-container .performance-description p {
         font-size: .8em; }
 
@@ -712,6 +738,7 @@ p {
 
 /* FOOTER */
 footer {
+  position: relative;
   height: 100px;
   padding: 10px 40px;
   background-color: gray;
@@ -721,9 +748,11 @@ footer {
     text-align: right; }
   footer .footer-left p {
     color: white !important;
-    line-height: .6em; }
-  footer p {
+    line-height: .6em;
     font-size: 12px; }
+    @media screen and (max-width: 460px) {
+      footer .footer-left p {
+        font-size: 10px; } }
   footer ul {
     position: relative;
     bottom: 8px;
@@ -734,12 +763,23 @@ footer {
       width: 30px; }
   footer div {
     position: relative; }
-    footer div #ant-rez {
-      font-size: 12px;
-      color: #a7a7a7; }
-      footer div #ant-rez a {
-        text-decoration: none;
-        color: #4f4f4f; }
   @media screen and (max-width: 460px) {
     footer {
       padding: 10px 20px !important; } }
+  footer #ant-rez-container {
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+    font-size: 12px;
+    color: #a7a7a7; }
+    footer #ant-rez-container a {
+      text-decoration: none;
+      color: #4f4f4f;
+      transition: .3s color  ease-in-out 0s; }
+      footer #ant-rez-container a:hover {
+        color: white; }
+    @media screen and (max-width: 460px) {
+      footer #ant-rez-container {
+        right: 20px; }
+        footer #ant-rez-container p {
+          font-size: 10px !important; } }

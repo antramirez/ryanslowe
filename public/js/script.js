@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('body').css("overflow", "hidden");
   }
 
-  $(".menu-nav-menu-container").prepend("<a href='https://rysclowe.staging.wpengine.com'><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>");
+  $(".menu-nav-menu-container").prepend("<a href='https://ryanslowe.com'><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>");
   $(".menu-nav-menu-container .banner-text").attr('id', 'logo');
 
   toggleLogo();
