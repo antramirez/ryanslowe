@@ -327,7 +327,7 @@ p {
     z-index: 1;
     vertical-align: baseline; }
     .homepage-container #homepage-main #homepage-main-image-container #banner-image {
-      height: 100vh;
+      height: calc(var(--vh,1vh) * 100);
       background-position: center !important;
       background-repeat: no-repeat !important;
       background-size: cover !important;
@@ -364,7 +364,7 @@ p {
             font-size: 65%; } }
         @media screen and (max-width: 400px) {
           .homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text {
-            font-size: 60%; } }
+            font-size: 58%; } }
         @media screen and (max-width: 360px) {
           .homepage-container #homepage-main #homepage-main-image-container #banner-image .banner-text {
             font-size: 50%; } }
@@ -472,14 +472,14 @@ p {
   right: 0;
   left: 0;
   padding: 10px;
-  height: 100vh;
+  height: calc(var(--vh,1vh) * 100);
   width: 100vw;
   z-index: 1000;
   display: none;
   background: black;
   color: white;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
+  overflow: auto;
+  overflow-y: auto;
   /*
   -ms-box-orient: horizontal;
   display: -webkit-box;
@@ -489,8 +489,6 @@ p {
   display: -webkit-flex;
   display: flex;
   */ }
-  .full-image-overlay-container::-webkit-scrollbar {
-    width: 0 !important; }
   .full-image-overlay-container .image-close-button {
     position: absolute;
     right: 32px;
@@ -517,8 +515,7 @@ p {
   .full-image-overlay-container .full-image-overlay-main {
     width: 100%;
     height: 100%;
-    display: flex;
-    overflow: scroll !important; }
+    display: flex; }
     .full-image-overlay-container .full-image-overlay-main .full-image-margin {
       width: 15%; }
       @media screen and (max-width: 800px) {
@@ -549,6 +546,9 @@ p {
         height: 84%;
         margin: auto;
         position: relative; }
+        @media screen and (max-width: 600px) {
+          .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container {
+            height: calc(var(--vh,1vh) * 60); } }
         .full-image-overlay-container .full-image-overlay-main .centered-container .full-image-container img {
           display: block;
           position: relative;
@@ -612,60 +612,73 @@ p {
             -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
             transition: .1s border-bottom ease-in-out 0s; }
-      .full-image-overlay-container .full-image-overlay-main .centered-container .performance-description p {
-        font-size: .8em; }
+      .full-image-overlay-container .full-image-overlay-main .centered-container .performance-description {
+        padding: 10px; }
+        .full-image-overlay-container .full-image-overlay-main .centered-container .performance-description p {
+          font-size: .8em; }
 
 /* GALLERY */
 .gallery-submenu-divs {
   cursor: pointer; }
-  .gallery-submenu-divs li figcaption {
-    font-size: 1.5em !important;
-    color: white;
-    background: transparent !important;
-    bottom: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%);
-    padding: 4px 4px !important;
-    width: calc(100% - 8px) !important;
-    transition: .3s color ease-in-out 0s; }
-  .gallery-submenu-divs li img {
-    opacity: 1;
-    transition: .3s opacity ease-in-out 0s; }
-  .gallery-submenu-divs li:hover img {
-    opacity: 0.5;
-    filter: alpha(opacity=50); }
-  .gallery-submenu-divs li:hover figcaption {
-    color: black;
-    cursor: pointer; }
+  .gallery-submenu-divs li figure {
+    justify-content: center !important; }
+    .gallery-submenu-divs li figure figcaption {
+      font-size: 1.5em !important;
+      color: white;
+      background: transparent !important;
+      bottom: auto !important;
+      top: 50% !important;
+      transform: translateY(-50%);
+      padding: 4px 4px !important;
+      width: calc(100% - 8px) !important;
+      max-width: 90%;
+      transition: .3s color ease-in-out 0s; }
+      @media screen and (max-width: 750px) {
+        .gallery-submenu-divs li figure figcaption {
+          font-size: 1.2em !important; } }
+      @media screen and (max-width: 450px) {
+        .gallery-submenu-divs li figure figcaption {
+          font-size: 120% !important; } }
+    .gallery-submenu-divs li figure img {
+      opacity: 1;
+      transition: .3s opacity ease-in-out 0s; }
+    .gallery-submenu-divs li figure:hover img {
+      opacity: 0.5;
+      filter: alpha(opacity=50); }
+    .gallery-submenu-divs li figure:hover figcaption {
+      color: black;
+      cursor: pointer; }
 
 /* PERFORMANCES */
 .performance-photos-gallery li {
   cursor: pointer; }
-  .performance-photos-gallery li figcaption {
-    font-size: 1.5em !important;
-    opacity: 0 !important;
-    background: transparent !important;
-    bottom: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%);
-    padding: 4px 4px !important;
-    width: calc(100% - 8px) !important; }
-    @media screen and (max-width: 815px) {
-      .performance-photos-gallery li figcaption {
-        opacity: 1 !important;
-        font-size: 1.2em !important; } }
-  .performance-photos-gallery li img {
-    opacity: 1;
-    transition: .3s opacity ease-in-out 0s; }
-  .performance-photos-gallery li:hover img {
-    opacity: 0.5;
-    filter: alpha(opacity=50); }
-  .performance-photos-gallery li:hover figcaption {
-    opacity: 1 !important;
-    background: transparent !important; }
-  @media screen and (max-width: 600px) {
-    .performance-photos-gallery li:hover figcaption {
-      color: black; } }
+  .performance-photos-gallery li figure {
+    justify-content: center !important; }
+    .performance-photos-gallery li figure figcaption {
+      font-size: 1.5em !important;
+      opacity: 0 !important;
+      background: transparent !important;
+      bottom: auto !important;
+      top: 50% !important;
+      transform: translateY(-50%);
+      padding: 4px 4px !important;
+      width: calc(100% - 8px) !important; }
+      @media screen and (max-width: 815px) {
+        .performance-photos-gallery li figure figcaption {
+          opacity: 1 !important;
+          font-size: 1.2em !important; } }
+    .performance-photos-gallery li figure img {
+      opacity: 1;
+      transition: .3s opacity ease-in-out 0s; }
+    .performance-photos-gallery li figure:hover img {
+      opacity: 0.5;
+      filter: alpha(opacity=50); }
+    .performance-photos-gallery li figure:hover figcaption {
+      opacity: 1 !important;
+      background: transparent !important; }
+    @media screen and (max-width: 600px) {
+      .performance-photos-gallery li figure:hover figcaption {
+        color: black; } }
 
 .show-container {
   display: none; }

@@ -515,8 +515,8 @@ p {
 
 
       #banner-image {
-        height: 100vh;
-        // height: calc(100vh);
+        // height: 100vh;
+        height: calc(var(--vh,1vh) * 100);
         background-position: center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important;
@@ -571,7 +571,7 @@ p {
           }
 
           @media screen and (max-width: 400px) {
-            font-size: 60%;
+            font-size: 58%;
           }
 
           @media screen and (max-width: 360px) {
@@ -580,9 +580,6 @@ p {
 
         }
       }
-
-
-
 
       .scroll-down-icon {
         position: absolute;
@@ -595,7 +592,6 @@ p {
         opacity: 0;
         // left: 50%;
         // transform: translateX(-50%);
-
 
         a {
           display: block;
@@ -694,7 +690,6 @@ p {
       }
     }
     
-
     @media screen and (max-width: 460px) {
       padding: 20px;
     }
@@ -724,16 +719,20 @@ p {
   right: 0;
   left: 0;
   padding: 10px;
-  height: 100vh;
+  // height: 100vh;
+  height: calc(var(--vh,1vh) * 100);
   width: 100vw;
   z-index: 1000;
   display: none;
   background: black;
   color: white;
 
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar { width: 0 !important }
+  // overflow: -moz-scrollbars-none;
+  // -ms-overflow-style: none;
+  overflow: auto;
+  overflow-y: auto;
+
+  // &::-webkit-scrollbar { width: 0 !important }
 
   // .image-close-button {
   //   position: absolute;
@@ -786,7 +785,7 @@ p {
     width: 100%;
     height: 100%;
     display: flex;
-    overflow: scroll !important;
+    // overflow: scroll !important;
 
     .full-image-margin {
       width: 15%;
@@ -829,6 +828,10 @@ p {
         height: 84%;
         margin: auto;
         position: relative;
+
+        @media screen and (max-width: 600px) {
+          height: calc(var(--vh,1vh) * 60);
+        }
 
         img {
           display: block;
@@ -939,6 +942,7 @@ p {
       }
 
       .performance-description {
+        padding: 10px;
         p {
           font-size: .8em;
         }
@@ -1000,34 +1004,49 @@ p {
   cursor: pointer;
 
   li {
-    figcaption {
-      font-size: 1.5em !important;
-      color: white;
-      background: transparent !important;
-      bottom: auto !important;
-      top: 50% !important;
-      transform: translateY(-50%);
-      padding: 4px 4px !important;
-      width: calc(100% - 8px) !important;
-      transition: .3s color ease-in-out 0s;
+    figure {
+      justify-content: center !important;
+
+
+      figcaption {
+        font-size: 1.5em !important;
+        color: white;
+        background: transparent !important;
+        bottom: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+        padding: 4px 4px !important;
+        width: calc(100% - 8px) !important;
+        max-width: 90%;
+        transition: .3s color ease-in-out 0s;
+
+        @media screen and (max-width: 750px) {
+          font-size: 1.2em !important;
+        }
+        @media screen and (max-width: 450px) {
+          font-size: 120% !important;
+        }
+  
+      }
+  
+      img {
+        opacity: 1;
+        transition: .3s opacity ease-in-out 0s;
+      }
+      &:hover img{
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+      }
+  
+      &:hover figcaption {
+        color: black;
+        cursor: pointer;
+        // opacity: 1 !important;
+        // background: transparent !important;
+      }
 
     }
-
-    img {
-      opacity: 1;
-      transition: .3s opacity ease-in-out 0s;
-    }
-    &:hover img{
-      opacity: 0.5;
-      filter: alpha(opacity=50);
-    }
-
-    &:hover figcaption {
-      color: black;
-      cursor: pointer;
-      // opacity: 1 !important;
-      // background: transparent !important;
-    }
+    
   }
 
 }
@@ -1040,46 +1059,49 @@ p {
     // display: none !important;
     cursor: pointer;
 
+    figure {
+      justify-content: center !important;
 
-    figcaption {
-      font-size: 1.5em !important;
-      opacity: 0 !important;
-      background: transparent !important;
-      bottom: auto !important;
-      top: 50% !important;
-      transform: translateY(-50%);
-      padding: 4px 4px !important;
-      width: calc(100% - 8px) !important;
-      // transition: 0s opacity ease-in-out 0s;
-
-      @media screen and (max-width: 815px){
-        & {
+      figcaption {
+        font-size: 1.5em !important;
+        opacity: 0 !important;
+        background: transparent !important;
+        bottom: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+        padding: 4px 4px !important;
+        width: calc(100% - 8px) !important;
+        // transition: 0s opacity ease-in-out 0s;
+  
+        @media screen and (max-width: 815px){
           opacity: 1 !important;
           font-size: 1.2em !important;
         }
-
+      }
+  
+      img {
+        opacity: 1;
+        transition: .3s opacity ease-in-out 0s;
+      }
+      &:hover img{
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+      }
+  
+      &:hover figcaption {
+        opacity: 1 !important;
+        background: transparent !important;
+      }
+  
+      @media screen and (max-width: 600px) {
+        &:hover figcaption{
+          color: black;
+        }
       }
     }
 
-    img {
-      opacity: 1;
-      transition: .3s opacity ease-in-out 0s;
-    }
-    &:hover img{
-      opacity: 0.5;
-      filter: alpha(opacity=50);
-    }
 
-    &:hover figcaption {
-      opacity: 1 !important;
-      background: transparent !important;
-    }
-
-    @media screen and (max-width: 600px) {
-      &:hover figcaption{
-        color: black;
-      }
-    }
+    
   }
 }
 

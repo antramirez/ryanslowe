@@ -1,6 +1,16 @@
 var $ = jQuery.noConflict();
-
+    
 $(document).ready(function(){
+
+  // find 1/100 of window height to set total height in css, and check for window resize
+  let vh = window.innerHeight * .01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  $(window).on('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
 
   if ($('body').hasClass('home')) {
     $('body').css("overflow", "hidden");
