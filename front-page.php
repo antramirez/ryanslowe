@@ -14,9 +14,9 @@ get_header(); ?>
 				<div id="homepage-main">
 					<div id="homepage-main-image-container">
 
-					<div id="homepage-placeholder-container">
+					<!-- <div id="homepage-placeholder-container">
 
-					</div>
+					</div> -->
 
 						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image.jpg');//'/09/dsc03602.jpg'); ?>)">
 

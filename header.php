@@ -34,26 +34,30 @@
   <div class="mobile-nav">
     <div class="mobile-nav-close-button"></div>
     <a href='https://ryanslowe.com' id="mobile-nav-logo"><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>
-    <ul>
-      <!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li> -->
-      <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
-      <li><a href="<?php echo esc_url( home_url( '/Happening' ) ); ?>">Happening</a></li>
-      <li class="mobile-menu-item has-children">
-        <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>">Gallery</a>
-        <!-- <ul>
-          <li class="sub-menu-item"><a href="">Performances</a></li>
-          <li class="sub-menu-item"><a href="">Headshots</a></li>
-          <li class="sub-menu-item"><a href="">Miscellaneous</a></li>
-        </ul> -->
-      </li>
-      <li><a href="<?php echo esc_url( home_url( '/videos' ) ); ?>">Videos</a></li>
+    <div class="mobile-nav-menu-container">
+      <ul>
+        <!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li> -->
+        <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/happening' ) ); ?>">Happening</a></li>
+        <li class="mobile-menu-item has-children">
+          <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>">Gallery</a>
+          <span class="drop-icon drop-icon-down"></span>
+          <ul class="mobile-sub-menu hidden">
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/gallery/performances' ) ); ?>">Performances</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/gallery/videos' ) ); ?>">Videos</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/gallery/miscellaneous' ) ); ?>">Miscellaneous</a></li>
+          </ul>
+        </li>
+        <li><a href="<?php echo esc_url( home_url( '/videos' ) ); ?>">Videos</a></li>
 
-      <li><a href="<?php echo esc_url( home_url( '/resume' ) ); ?>">Resume</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/resume' ) ); ?>">Resume</a></li>
 
-      <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
 
 
 
-    </ul>
+      </ul>
+    </div>
+    
   </div>
   <?php //body_class(); ?>
