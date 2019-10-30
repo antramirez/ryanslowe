@@ -1,5 +1,5 @@
 var $ = jQuery.noConflict();
-    
+
 $(document).ready(function(){
 
   // find 1/100 of window height to set total height in css, and check for window resize
@@ -38,7 +38,7 @@ $(document).ready(function(){
     // animate drop down icon
     $(this).toggleClass('drop-icon-up');
   });
-  
+
 
   $(function () {
     $(document).scroll(function () {
@@ -50,7 +50,7 @@ $(document).ready(function(){
         toggleLogo();
         $("body").css({"overflow": "auto"});
         // scroll name left
-        $(".banner-text").css("left", -$(window).scrollTop()*1.4);   
+        $(".banner-text").css("left", -$(window).scrollTop()*1.4);
 
       }
     });
@@ -94,7 +94,7 @@ $(document).ready(function(){
       // click function for performance gallery
       $(this).click( function() {
         console.log(`JUST CLICKED ON GALLERY ${idx}`);
-        
+
         currImgIdx = 0;
 
         $("body").css("overflow", "hidden");
@@ -123,37 +123,37 @@ $(document).ready(function(){
           const photographer = $(currShowInfo).children()[4];
 
           if (!allShowsInfo[idx]) {
-            allShowsInfo[idx] = 
+            allShowsInfo[idx] =
             {
               character: character,
               location: location,
               addtlInfo: addtlInfo,
               photographer: photographer
             }
-          } 
-          
+          }
+
           // add fields to the DOM
-          $('.character-title').text($(character).text());   
+          $('.character-title').text($(character).text());
           $(allShowsInfo[idx].location).appendTo('.performance-description');
           $(allShowsInfo[idx].addtlInfo).appendTo('.performance-description');
-          $(allShowsInfo[idx].photographer).appendTo('.performance-description');          
+          $(allShowsInfo[idx].photographer).appendTo('.performance-description');
 
           const showGalleries = $(".show-gallery");
           const currGallery = showGalleries[idx];
           let allImagesInCurrGallery = $(currGallery).children()
           imgSrcs = [];
-  
+
           // get relevant gallery photos
           $(allImagesInCurrGallery).each( function(pic_idx) {
             const currImg = $(this.firstChild.firstChild);
             imgSrcs.push(currImg);
-            
+
           });
-          
+
           // get reference to img container to display image in array
           $(".centered-container .full-image-container img").attr('src', $(imgSrcs[currImgIdx]).attr('src'));
-        }        
-        
+        }
+
       });
 
     });
@@ -189,7 +189,7 @@ $(document).ready(function(){
       currImgIdx = 0;
 
       console.log($('.performance-description').children());
-      
+
 
       $('.performance-description').children().each(function() {
         console.log("hi");
@@ -197,7 +197,7 @@ $(document).ready(function(){
       });
 
     });
-    
+
   });
 
   // add target=_blank to pdf link
@@ -209,7 +209,7 @@ function toggleLogo() {
   var $nav = $(".menu-nav-menu-container");
   var $homepage = $("#homepage-main-image-container");
   console.log($homepage);
-  
+
   $nav.toggleClass('scrolled black-text', $(this).scrollTop() >= $homepage.height());
   $("#logo").toggleClass("opaque", $(this).scrollTop() >= $homepage.height());
   $( ".menu-item-has-children ul").toggleClass('submenu-bg', $(this).scrollTop() >= $homepage.height());
