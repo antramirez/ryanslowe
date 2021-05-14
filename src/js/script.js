@@ -7,34 +7,81 @@ $(document).ready(function(){
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
   $(window).on('resize', () => {
-    // We execute the same script as before
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
 
-  if ($('body').hasClass('home')) {
-    $('body').css("overflow", "hidden");
-  }
-
-  $(".menu-nav-menu-container").prepend("<a href='https://ryanslowe.com'><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>");
+  $(".menu-nav-menu-container").prepend("<a href='https://ryanlisa.com' style='opacity:1;'><div class='banner-text'><h1>RYAN LISA</h1></div></a>");
   $(".menu-nav-menu-container .banner-text").attr('id', 'logo');
 
-  toggleLogo();
+  if ($('body').hasClass('home')) {
+    $('body').css("overflow", "hidden");
+    $("#logo").addClass('no-opacity')
+    $(".hamburger-menu-container").css('opacity', '0');
 
-  $("#homepage-main-image-container .banner-text").animate({opacity: "1"}, 3000);
-  $("#homepage-main-image-container .banner-text span").animate({opacity: "1"}, 4400);
-  $(".scroll-down-icon").animate({opacity: 1}, 6000);
+    // $(".content-area").css("opacity", "1");
+    $(".menu-nav-menu-container li").toggleClass('shadow');
+
+    $(".menu-nav-menu-container").animate({opacity: "1"}, 4500);
+    $(".hamburger-menu-container").animate({opacity: "1"}, 4500);
+    $("#homepage-main-image-container .banner-text").animate({opacity: "1"}, 4000);
+    $("#homepage-main-image-container .banner-text span").animate({opacity: "1"}, 4400);
+    $(".scroll-down-icon").animate({opacity: 1}, 6000);
+    
+    const arr = window.location.href.split('/');
+
+    const idx = (window.location.href[window.location.href.length - 1] === '/') ? arr.length - 2 : arr.length - 1;
+
+    if (arr[idx] === "#featured-content") {
+      $(".menu-nav-menu-container li").toggleClass('shadow');
+      $("#featured-content").css("opacity", "1");
+      $("#featured-content h2").css("opacity", "1");
+      $("#featured-content h3").css("opacity", "1");
+      $("#featured-content ul").css("opacity", "1");
+      // $(".menu-nav-menu-container li").toggleClass('shadow');
+    }
+  }
+  else {
+    $(".menu-nav-menu-container").animate({opacity: "1"}, 2000);
+    $(".menu-item-has-children ul").addClass('submenu-bg')
+  }
+
+  $(".content-area").animate({opacity: "1"}, 1000);
+
+  $(".footer-left").animate({opacity: 1}, 3500);
+  $(".footer-right").animate({opacity: 1}, 3500);
+  $("#ant-rez-container").animate({opacity: 1}, 3500);
+
+  
+
+  // toggleNavBar();
+
+  
 
 
   // mobile nav
   $('.hamburger-menu-container').click(function() {
+    $(this).css('display', 'none');
     $('.mobile-nav').css('display', 'block');
+    $('.mobile-nav').animate({opacity: 1, left: '0'}, 400, 
+                              () => {
+                                $('.mobile-nav-close-button').css('display', 'block')
+
+    });
+
   });
   $('.mobile-nav-close-button').click(function() {
-    $('.mobile-nav').css('display', 'none');
+    $(this).css('display', 'none');
+
+    $('.mobile-nav').animate({opacity: 0, left: '100%'}, 400, function() {
+      $('.mobile-nav').css('display', 'none');
+      $('.hamburger-menu-container').css('display', 'block')
+    });
+
+    
   });
   $('.drop-icon').click(function() {
-    $('ul.mobile-sub-menu').toggleClass('hidden');
+    $(this).next().toggleClass('hidden');
     // animate drop down icon
     $(this).toggleClass('drop-icon-up');
   });
@@ -44,13 +91,18 @@ $(document).ready(function(){
     $(document).scroll(function () {
       let $nav = $(".menu-nav-menu-container");
       let $homepage = $("#homepage-main-image-container");
+      const navHeight = 40;
 
       // only toggle these classes on homepage
       if ($('body').hasClass('home')) {
-        toggleLogo();
+        toggleNavBar();
         $("body").css({"overflow": "auto"});
-        // scroll name left
-        $(".banner-text").css("left", -$(window).scrollTop()*1.4);
+
+        $('.menu-nav-menu-container').toggleClass('sticky', $(this).scrollTop() >= 40 + navHeight + $homepage.height(), 100);
+
+      }
+      else {
+        $('.menu-nav-menu-container').toggleClass('sticky', $(this).scrollTop() >= navHeight, 100);
 
       }
     });
@@ -58,26 +110,38 @@ $(document).ready(function(){
 
   // sroll button animation
   $('.scroll-down-icon').click(function(e){
-    // e.preventDefault();
       $('html, body').animate({
-        scrollTop: jQuery('#homepage-main-image-container').height()},
-        500,
+        scrollTop: jQuery('#homepage-main-image-container').height()+ 40},
+        1000,
         'linear'
       );
-      $(".banner-text").animate( {
-        left: "-=50"
-      }, 1000, 'linear');
+    $(".menu-nav-menu-container li").toggleClass('shadow');
+    $("#featured-content h2").animate({opacity: "1"}, 1000);
+    $("#featured-content h3").animate({opacity: "1"}, 2000);
+    $("#featured-content ul").animate({opacity: "1"}, 3000);
+
     })
 
 
   // set links to gallery links
-  $('.gallery-submenu-divs li').each(function(index) {
+  $('.submenu-divs li').each(function(index) {
     const figure = this.firstChild;
     const caption = figure.lastChild;
 
     $(figure).wrap(function() {
       const linkText = $( caption ).text();
-      return `<a href="${linkText.toLowerCase()}"></div>`;
+      if (linkText.toLowerCase() !== 'resume') {
+        if (linkText.split(' ').length < 2) {
+          return `<a href="${linkText.toLowerCase()}"></a>`;
+        }
+        else {
+          return `<a href="${linkText.toLowerCase().split(' ').join('-')}"></a>`;
+        }
+        
+      }
+      else {
+        return `<a href="https://ryanlisa.com/wp-content/uploads/2019/10/RyanSLoweResume-2.pdf"></a>`;
+      }
     });
   });
 
@@ -93,8 +157,6 @@ $(document).ready(function(){
 
       // click function for performance gallery
       $(this).click( function() {
-        console.log(`JUST CLICKED ON GALLERY ${idx}`);
-
         currImgIdx = 0;
 
         $("body").css("overflow", "hidden");
@@ -113,7 +175,6 @@ $(document).ready(function(){
         // set details
         const allShowsInfoContainers =  $('.show-container');
         const currShowInfo = allShowsInfoContainers[idx];
-
 
         if (currShowInfo) {
           // p elements containing the field values
@@ -140,9 +201,10 @@ $(document).ready(function(){
 
           const showGalleries = $(".show-gallery");
           const currGallery = showGalleries[idx];
-          let allImagesInCurrGallery = $(currGallery).children()
+          // let allImagesInCurrGallery = $(currGallery).children();
+          // switch line above with below on server
+          let allImagesInCurrGallery = $(currGallery).first().children().children()
           imgSrcs = [];
-
           // get relevant gallery photos
           $(allImagesInCurrGallery).each( function(pic_idx) {
             const currImg = $(this.firstChild.firstChild);
@@ -167,6 +229,7 @@ $(document).ready(function(){
         currImgIdx--;
       }
       $(".centered-container .full-image-container img").attr('src', $(imgSrcs[currImgIdx]).attr('src'));
+      // if image is portrait, keep arrows black
     });
 
     $('.right-arrow').click(function() {
@@ -188,11 +251,7 @@ $(document).ready(function(){
       // reset
       currImgIdx = 0;
 
-      console.log($('.performance-description').children());
-
-
       $('.performance-description').children().each(function() {
-        console.log("hi");
         $(this).remove();
       });
 
@@ -201,16 +260,15 @@ $(document).ready(function(){
   });
 
   // add target=_blank to pdf link
-  $(".wp-block-file").children(":first").attr('target', '_blank');
+  // $(".wp-block-file").children(":first").attr('target', '_blank');
 });
 
 
-function toggleLogo() {
+function toggleNavBar() {
   var $nav = $(".menu-nav-menu-container");
   var $homepage = $("#homepage-main-image-container");
-  console.log($homepage);
 
-  $nav.toggleClass('scrolled black-text', $(this).scrollTop() >= $homepage.height());
-  $("#logo").toggleClass("opaque", $(this).scrollTop() >= $homepage.height());
+  $('#logo').toggleClass('no-opacity', $(this).scrollTop() < $homepage.height() + 40, 1000)
+  $("#logo").toggleClass("opaque", $(this).scrollTop() >= $homepage.height() + 40, 1000);
   $( ".menu-item-has-children ul").toggleClass('submenu-bg', $(this).scrollTop() >= $homepage.height());
 }

@@ -14,35 +14,19 @@
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-
-		<header class="entry-header">
-			<?php the_title('<h1>', '</h1>'); ?>
-		</header>
+	<main id="main" class="site-main" role="main">	
 		<div class="entry-content">
-
+			<header class="entry-header">
+				<?php the_title('<h1>', '</h1>'); ?>
+			</header>
 			<?php
 			while ( have_posts() ) :
 				the_post();
-
-				// Include the page content template.
-				// get_template_part( 'template-parts/content', 'page' );
 				the_content();
-
-
-				// End of the loop.
 			endwhile;
-
-
-
 			?>
-
-
 		</div>
-
 	</main><!-- .site-main -->
-
-
 </div><!-- .content-area -->
 
 

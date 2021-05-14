@@ -17,7 +17,7 @@
     gtag('config', 'UA-147260724-1');
   </script>
  
-  <title>Ryan S. Lowe</title>
+  <title>Ryan Lisa <?php if (!is_front_page()) echo "-"; echo wp_title(''); ?></title>
 
   <?php wp_head(); ?>
 
@@ -33,29 +33,30 @@
   </div>
   <div class="mobile-nav">
     <div class="mobile-nav-close-button"></div>
-    <a href='https://ryanslowe.com' id="mobile-nav-logo"><div class='banner-text'><h1>RYAN S. LOWE</h1> <span>ACTOR</span> | <span>SINGER</span> | <span>DANCER</span> | <span>PERFORMER</span></div></a>
     <div class="mobile-nav-menu-container">
       <ul>
-        <!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li> -->
+        <li><a href="<?php echo get_home_url(); ?>" id="mobile-nav-logo"><h1>RYAN LISA</h1></a></li>
         <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/happening' ) ); ?>">Happening</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/now-playing' ) ); ?>">Now Playing</a></li>
         <li class="mobile-menu-item has-children">
-          <a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>">Gallery</a>
+          <a href="<?php echo esc_url( home_url( '/theatre' ) ); ?>">Theatre</a>
           <span class="drop-icon drop-icon-down"></span>
           <ul class="mobile-sub-menu hidden">
-            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/gallery/performances' ) ); ?>">Performances</a></li>
-            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/gallery/videos' ) ); ?>">Videos</a></li>
-            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/gallery/miscellaneous' ) ); ?>">Miscellaneous</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/theatre/performances' ) ); ?>">Performances</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/theatre/headshot' ) ); ?>">Headshots</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/theatre/videos' ) ); ?>">Videos</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/wp-content/uploads/2019/08/RyanSLoweResume.pdf' ) ); ?>">Resume</a></li>
           </ul>
         </li>
-        <li><a href="<?php echo esc_url( home_url( '/videos' ) ); ?>">Videos</a></li>
-
-        <li><a href="<?php echo esc_url( home_url( '/resume' ) ); ?>">Resume</a></li>
-
+        <li class="mobile-menu-item has-children">
+          <a href="<?php echo esc_url( home_url( '/modeling' ) ); ?>">Modeling</a>
+          <span class="drop-icon drop-icon-down"></span>
+          <ul class="mobile-sub-menu hidden">
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/modeling/photography' ) ); ?>">Photography</a></li>
+            <li class="sub-menu-item"><a href="<?php echo esc_url( home_url( '/modeling/figure-drawing' ) ); ?>">Figure Drawing</a></li>
+          </ul>
+        </li>
         <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
-
-
-
       </ul>
     </div>
     

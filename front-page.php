@@ -13,39 +13,32 @@ get_header(); ?>
       <div class="homepage-container">
 				<div id="homepage-main">
 					<div id="homepage-main-image-container">
+						<div id="banner-image">
 
-					<!-- <div id="homepage-placeholder-container">
-
-					</div> -->
-
-						<div id="banner-image" style="background: url(<?php echo(content_url() . '/uploads/2019/08/Webp.net-compress-image.jpg');//'/09/dsc03602.jpg'); ?>)">
-
+						<?php echo do_shortcode('[metaslider id="403"]'); ?>
 						
-							<div class="banner-text">
-								<h1>RYAN S. LOWE</h1>
-								<span>ACTOR</span>  | 
-								<span>SINGER</span>  | 
-								<span>DANCER</span>  | 
-								<span>PERFORMER</span>
+							<div class="banner-text shadow">
+								<h1>RYAN LISA</h1>
+								<span>THEATRE MAKER</span>  | 
+								<span>NIGHTLIFE PERFORMER</span>  | 
+								<span>ARTIST</span>  | 
+								<span>ACTIVIST</span>
 							</div>
 							<div class="scroll-down-icon">
 								<a href="#featured-content" id="arrow">
-									<span></span>
+									<span class="shadow"></span>
 								</a>
-								<a href="#featured-content" id="scroll-link">
+								<a href="#featured-content" class="shadow" id="scroll-link">
 									Featured
 								</a>
 							</div>
 						</div>
-
 
 					</div>
 				</div>
 				<div id="featured-content">
 					<?php echo get_post_field('post_content'); ?>
 				</div>
-
-
   		</div>
 		</main>
 	</div>
